@@ -30,7 +30,7 @@ document.addEventListener('click', async (e) => {
 	else if (e.target.id.includes("vs"))
 	{
 		updateState({ page: page_data['game'], url: "/game", mode: e.target.id, tournament: false });
-		startGame(gamemode, gameSettings, gameConf[prop]);
+		startGame(e.target.id, gameSettings, false);
 	}
 	else if (e.target.id.includes("submit_button"))
 	{

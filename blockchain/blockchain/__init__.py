@@ -67,13 +67,12 @@ def call_contract(mathces, winner):
 		})
 
 		signed_tx = web3.eth.account.sign_transaction(call_function, private_key=private_key)
-
-		tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
+		tx_hash = web3.eth.send_raw_transaction(signed_tx.raw_transaction)
+		return tx_hash
 	except Exception as e:
-		print("exception: ", e)
+		logger.error(f"exception: ${e}")
 		return False
 
-	return tx_hash
 
 def get_all_tournaments():
 	return deployed_contract.functions.getTournaments().call()

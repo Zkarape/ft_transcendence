@@ -18,7 +18,6 @@ const storeGameScore = async (data) => {
 			},
 			body: JSON.stringify(finalData),
 		});
-
 	} catch (error) {
 		showErrorMessage("Couldn't store data in blockchain: " + error);
 	}
